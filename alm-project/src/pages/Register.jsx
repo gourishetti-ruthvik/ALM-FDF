@@ -1,8 +1,12 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -12,13 +16,13 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('user', JSON.stringify(formData));
-    alert('Registration successful! Please login.');
-    navigate('/login');
+    localStorage.setItem("user", JSON.stringify(formData));
+    alert("Registration successful! Please login.");
+    navigate("/login");
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-blue-400">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
         <form onSubmit={handleSubmit}>
